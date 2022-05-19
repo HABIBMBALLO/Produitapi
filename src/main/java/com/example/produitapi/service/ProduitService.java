@@ -20,11 +20,11 @@ public class ProduitService {
     public Produit saveProduit(Produit produit){
         return produitRepository.save(produit);
     }
-    public Produit getProduitById(long id){
+    public Optional<Produit> getProduitById(long id){
         return produitRepository.findById(id);
     }
     public Optional<Produit> getProduit(long id){
-        Produit p = produitRepository.findById(produit);
+        Optional<Produit> p = produitRepository.findById(id);
         return p;
     }
     public void deleteProduit(long id){
